@@ -39,3 +39,15 @@ class Journal(models.Model):
 
     def get_absolute_url(self):
         return reverse("Journal_detail", kwargs={"pk": self.pk})
+
+class Article(models.Model):
+    title = models.TextField()
+    category = models.CharField(max_length=1)
+    content = models.TextField()
+    date = models.DateField(default=date.today)
+
+    def __str__(self):
+        return self.title
+    def get_absolute_url(self):
+        return reverse("Art_detail", kwargs={"pk": self.pk})
+

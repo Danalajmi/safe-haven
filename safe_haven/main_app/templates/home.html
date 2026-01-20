@@ -1,4 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Home</h1>
+<!-- only for logged in users -->
+{% include "./main_app/journal_list.html" %}
+<!-- for all -->
+{% include "./main_app/article_list.html" %}
 {% endblock content %}

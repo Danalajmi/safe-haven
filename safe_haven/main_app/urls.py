@@ -10,4 +10,11 @@ urlpatterns = [
     path('journals/<int:pk>/', views.DetailJournal.as_view(), name='Journal_detail'),
     path('journals/<int:pk>/update/', views.UpdateJournal.as_view(), name='Journal_update'),
     path('journals/<int:pk>/delete/', views.DeleteJournal.as_view(), name='Journal_delete'),
+
+    path('articles/all', views.IndexArt.as_view(), name='IndexArt'),
+    path('articles/new', views.CreateArt.as_view(), name='CreateArt'),
+    path('articles/<int:pk>', views.DetailArt.as_view(), name='Art_detail'),
+    path('articles/<int:pk>/update', views.UpdateArt.as_view(), name='Art_update'),
+    path('articles/<int:pk>/delete', views.DeleteArt.as_view(), name='Art_delete'),
+
 ]
