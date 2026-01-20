@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.shortcuts import render
 from django.contrib.auth.models import User
 from datetime import date
 
@@ -58,7 +59,7 @@ class Mood(models.Model):
 
     def __str__(self):
         return f"{self.rate} on {self.date}"
-    
+
     def get_absolute_url(self):
-        return reverse("Mood_detail", kwargs={"pk": self.pk})
+        return reverse('home')
 
