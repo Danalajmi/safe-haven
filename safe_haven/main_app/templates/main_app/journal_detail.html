@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{entry.title}}</h1>
+<a href="{%url 'Journal_update' object.id%}">Edit</a>
+<a href="{%url 'Journal_delete' object.id%}">Delete</a>
+{%block confirm%}
+{%endblock%}
+
+{% endblock content %}

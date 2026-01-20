@@ -1,0 +1,12 @@
+.nav-items{
+  color: black;
+}
+
+body{
+  margin: auto;
+}
+select {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
