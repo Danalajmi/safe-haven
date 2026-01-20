@@ -1,5 +1,10 @@
 <!-- get this to show in home.html & idk where else, using include -->
-{%for article in articles%}
-<a href="{%url 'Art_detail' article.id %}">{{article.title}}</a>
-{%endfor%}
+<div class="row">
+<h2>Interesting Articles: </h2>
+  {%for article in articles%}
+  <div class="col">
+    <a href="{%url 'Art_detail' article.id %}"><h1>{{article.title}}</h1></a>
+  </div>
+  {%endfor%}
+</div>
 

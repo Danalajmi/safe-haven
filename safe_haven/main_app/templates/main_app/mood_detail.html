@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{mood.rate}} because {{mood.reason}}</h1>
+<a href="{%url 'mood_update' object.id%}">Edit</a>
+<a href="{%url 'mood_delete' object.id%}">Delete</a>
+{%block confirm%}
+{%endblock%}
+{% endblock content %}

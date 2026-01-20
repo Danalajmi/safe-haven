@@ -1,33 +1,35 @@
 {% load static %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  <title>Safe Haven</title>
-</head>
-<body>
-  <header class="navbar-fixed ">
-    <nav class="pink lighten-2">
-      <div>
-        <ul>
-        <li><a href="{%url 'home' %}">Home</a></li>
+    <title>Safe Haven</title>
+  </head>
+  <body>
+    <header class="navbar-fixed">
+      <nav class="deep-purple accent-1">
+        <div >
+          <ul>
+            <li><a href="{%url 'home' %}">SAFE HAVEN</a></li>
+            <div class="right">
 
-        <li><a href="{% url 'CreateJournal'%}">add entry</a></li>
-        <li><a href="{% url 'IndexJournal'%}">All entries</a></li>
-        <li><a href="{% url 'CreateArt'%}">Post an article</a></li>
-      </ul>
-      </div>
-    </nav>
-  </header>
-  {% block content %}
-  {% endblock content %}
-</body>
+              <li><a href="{% url 'CreateJournal'%}">add entry</a></li>
+              <li><a href="{% url 'AddMood'%}">Add mood</a></li>
+              <!-- <li><a href="{% url 'IndexJournal'%}">All entries</a></li> -->
+              <li><a href="{% url 'CreateArt'%}">Post an article</a></li>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">{% block content %} {% endblock content %}</div>
+  </body>
 </html>

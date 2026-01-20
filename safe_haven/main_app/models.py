@@ -51,3 +51,14 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse("Art_detail", kwargs={"pk": self.pk})
 
+class Mood(models.Model):
+    rate = models.IntegerField(choices=SCALE)
+    reason = models.TextField()
+    date = models.DateField(default=date.today)
+
+    def __str__(self):
+        return f"{self.rate} on {self.date}"
+    
+    def get_absolute_url(self):
+        return reverse("Mood_detail", kwargs={"pk": self.pk})
+

@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Journal, Article
+from .models import Journal, Article, Mood
 
 # Create your views here.
 
@@ -26,7 +26,8 @@ def signup(request):
 def home(request):
     articles = Article.objects.all()
     entries = Journal.objects.all()
-    return render(request, 'home.html', {'articles': articles, 'entries': entries})
+    moods = Mood.objects.all()
+    return render(request, 'home.html', {'articles': articles, 'entries': entries, 'moods': moods})
 
 class IndexJournal(ListView):
     model = Journal
@@ -71,3 +72,22 @@ class DeleteArt(DeleteView):
     model = Article
     success_url = '/'
 
+class IndexMood(ListView):
+    model = Mood
+    context_object_name = 'moods'
+
+class AddMood(CreateView):
+    model = Mood
+    fields = '__all__'
+
+class UpdateMood(UpdateView):
+    model = Mood
+    fields = '__all__'
+
+class DetailMood(DetailView):
+    model = Mood
+    context_object_name = 'mood'
+
+class DeleteMood(DeleteView):
+    model = Mood
+    success_url = '/'

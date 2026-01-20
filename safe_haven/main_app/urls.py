@@ -17,4 +17,10 @@ urlpatterns = [
     path('articles/<int:pk>/update', views.UpdateArt.as_view(), name='Art_update'),
     path('articles/<int:pk>/delete', views.DeleteArt.as_view(), name='Art_delete'),
 
+    path('moods/all/', views.IndexMood.as_view(), name='IndexMood'),
+    path('moods/new/', views.AddMood.as_view(), name='AddMood'),
+    path('moods/<int:pk>/', views.DetailMood.as_view(), name='Mood_detail'),
+    path('moods/<int:pk>/update', views.UpdateMood.as_view(), name='mood_update'),
+    path('moods/<int:pk>/delete', views.DeleteMood.as_view(), name='mood_delete'),
+
 ]

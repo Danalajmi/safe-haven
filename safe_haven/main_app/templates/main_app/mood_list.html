@@ -1,0 +1,6 @@
+{%for mood in moods%}
+<div>
+  <a href="{% url 'Mood_detail' mood.id%}"><p>feeling {{mood.rate}}/5 on {{mood.date}}</p></a>
+</div>
+
+{%endfor%}
